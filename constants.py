@@ -1,0 +1,10 @@
+FPS = 60
+WIDTH, HEIGHT = 900, 600
+
+SHAPE_SIZE = 30*4  # should be a number divisible by 3
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+FOREGROUND_COLOR = WHITE
+BACKGROUND_COLOR = BLACK
