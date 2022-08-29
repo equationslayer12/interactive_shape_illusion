@@ -8,10 +8,6 @@ from numpy import arange
 from constants import *
 
 
-def get_points_from_rect(rect: pygame.Rect):
-    return [rect.topleft, rect.bottomleft, rect.bottomright, rect.topright]
-
-
 class Shape:
     def __init__(self, center_point, color):
         self.center_point = center_point
@@ -168,6 +164,10 @@ def pygame_init():
     pygame.display.init()
 
 
+def get_points_from_rect(rect: pygame.Rect):
+    return [rect.topleft, rect.bottomleft, rect.bottomright, rect.topright]
+
+
 def main():
     pygame_init()
 
@@ -177,8 +177,6 @@ def main():
 
     is_mouse_pressed = False
     game = Game(screen)
-    # the_chosen_shape: Shape = game.shapes[167]
-    # the_chosen_shape.color = (0, 255, 0)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -187,23 +185,16 @@ def main():
 
             elif event.type == pygame.KEYDOWN:
                 pass
-                # game.select_shape(the_chosen_shape)
-                # the_chosen_shape.create_background_rect()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 is_mouse_pressed = True
             elif event.type == pygame.MOUSEBUTTONUP:
                 is_mouse_pressed = False
 
-        # update
-        # for shape in game.shapes:
-        #     shape.rotate(0.01)
-
         if is_mouse_pressed:
             mouse_position = pygame.mouse.get_pos()
             game.select_shape_from_position(mouse_position)
 
-        # draw
         game.update_screen(screen)
 
         pygame.display.update()
