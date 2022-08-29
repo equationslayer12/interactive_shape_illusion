@@ -172,7 +172,7 @@ def main():
     pygame_init()
 
     screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
-    pygame.display.set_caption('Interactive Art Museum')
+    pygame.display.set_caption('Interactive Shape Illusion')
     clock = pygame.time.Clock()
 
     is_mouse_pressed = False
